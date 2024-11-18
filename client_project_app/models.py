@@ -11,7 +11,7 @@ class Client(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.client_name, self.id
+        return self.client_name
 
 ############## Project model ##############
 class Project(models.Model):
