@@ -129,7 +129,7 @@ def get_project(request): # API endpoint to fetch project details
 
 
 # GET project details by id
-@api_view(['GET']) 
+@api_view(['GET','DELETE']) 
 def get_project_by_id(request, id):  # API endpoint to fetch project details by specific project [ID]
     if not request.user.is_authenticated: 
         return Response({"error": "You must be logged in to view projects"}, status=401)
