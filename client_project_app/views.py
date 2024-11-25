@@ -107,7 +107,6 @@ def create_client(request): # API endpoint to create a new client.
         serializers = BasicClientSerializer(data=request.data)
         if serializers.is_valid():
             serializers.save(created_by=request.user)
-            serializers.save()
             return Response({'msg':'Data Created','client':serializers.data}, status=status.HTTP_201_CREATED)
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
